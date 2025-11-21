@@ -22,6 +22,7 @@ class GNN(torch.nn.Module):
     def forward(self, x, edge_index, batch):
         #pass through each network, [numNodes, inChannels] is the node feature matric (x)
         #edgeIndex is the graph connectivity and the batch is the graph index per node
+        #finding common landmarks
         x=self.conv1(x, edge_index)
         x=F.relu(x)
         x=self.conv2(x, edge_index)
