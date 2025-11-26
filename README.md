@@ -42,3 +42,11 @@ Files:
         2.) dataset.py (dataset loader & feature extraction using a CNN encoder)
         3.) GNNmodel.py (Graph Neural Network model)
         4.) train.py (ties files together and trains a simple clasification/regression Graph Neural Network)
+
+
+Notes & Feedback from Dr.R:
+-Accuracy peaking at ~57% with lower averages likely stems from small dataset size + distribution mismatches across clients.
+-Expanding the Gazebo dataset and applying targeted augmentation (rotations, lighting changes, noise, viewpoint shifts) is a strong next step, especially for vision-based navigation.
+-Hyperparameter tuning (learning rate, epochs, AdamW, cosine LR schedules) is good — change only one variable at a time and keep detailed logs.
+-Try different data splits; small or imbalanced partitions can destabilize convergence in federated learning.
+-Test alternative pretrained CNN backbones (ResNet34, MobileNetV3, EfficientNet-B0) to improve embedding quality and GNN generalization.
